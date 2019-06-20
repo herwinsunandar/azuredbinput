@@ -1,0 +1,2 @@
+# azuredbinput
+test via azure
