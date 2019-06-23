@@ -45,10 +45,15 @@
 <br />
 </form>
 <?php 
-$Driver="ODBC Driver 13 for SQL Server";
-$serverName = "herwin.database.windows.net";
-$options = array(  "UID" => "e30nx",  "PWD" => "K@nwil0199",  "Database" => "dicodingdb");
-$conn = sqlsrv_connect($serverName, $options);
+// PHP Data Objects(PDO) Sample Code:
+try {
+    $conn = new PDO("sqlsrv:server = tcp:herwin.database.windows.net,1433; Database = dicodingdb", "e30nx", "K@nwil0199");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $e) {
+    print("Error connecting to SQL Server.");
+    die(print_r($e));
+}  
 $query = "SELECT * FROM Registration";
 $stmt = sqlsrv_query($Driver,$conn,$query);
 if($stmt === false)
