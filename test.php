@@ -28,16 +28,26 @@
        <input type="submit" name="load_data" value="Load Data" />
  </form>
  <?php
-    $host = "herwin.database.windows.net";
-    $user = "e30nx";
-    $pass = "K@nwil0199";
-    $db = "dicodingdb";
-    try {
-        $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
-        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-    } catch(Exception $e) {
-        echo "Failed: " . $e;
-    }
+   // $host = "herwin.database.windows.net";
+   // $user = "e30nx";
+   // $pass = "K@nwil0199";
+   // $db = "dicodingdb";
+   // try {
+   //     $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
+    //    $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+
+  //  } catch(Exception $e) {
+    //    echo "Failed: " . $e;
+   // }
+$Driver="ODBC Driver 13 for SQL Server";
+$serverName = "tcp:herwin.database.windows.net,1433";
+$options = array(  "UID" => "e30nx",  "PWD" => "K@nwil0199",  "Database" => "dicodingdb");
+$conn = sqlsrv_connect($Driver,$serverName, $options);
+if( $conn === false )
+     {
+     echo "Could not connect.\n";
+     die( print_r( sqlsrv_errors(), true));
+     }
     if (isset($_POST['submit'])) {
         try {
             $name = $_POST['name'];
