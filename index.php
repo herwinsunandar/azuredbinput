@@ -106,13 +106,13 @@ catch (PDOException $e) {
                 echo "<th>Email</th>";
                 echo "<th>Job</th>";            
                 echo "<th>Date</th>";
-                echo "<th>Phone</th>";
+                echo "<th>Phone</th></tr>";
                 foreach($registrants as $registrant) {
                     echo "<tr><td>".$registrant['name']."</td>";
                     echo "<td>".$registrant['email']."</td>";
                     echo "<td>".$registrant['job']."</td>";
-                    echo "<td>".$registrant['date']."</td></tr>";
-                    echo "<td>".$registrant['phone']."</td>";
+                    echo "<td>".$registrant['date']."</td>";
+                    echo "<td>".$registrant['phone']."</td></tr>";
 
                 }
                 echo "</table>";
