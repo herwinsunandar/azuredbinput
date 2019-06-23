@@ -46,7 +46,7 @@
 </form>
 <?php 
 $Driver="ODBC Driver 13 for SQL Server";
-$serverName = "tcp:herwin.database.windows.net,1433";
+$serverName = "herwin.database.windows.net";
 $options = array(  "UID" => "e30nx",  "PWD" => "K@nwil0199",  "Database" => "dicodingdb");
 $conn = sqlsrv_connect($Driver,$serverName, $options);
 $query = "SELECT * FROM Registration";
