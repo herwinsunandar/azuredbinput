@@ -29,18 +29,12 @@
  </form>
  <?php
  
-   $host = "tcp:herwin.database.windows.net,1433";
-   $user = "e30nx";
-   $pass = "K@nwil0199";
-   $db = "dicodingdb";
-   try {
-        $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
-        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+  
 
-  } catch(Exception $e) {
-        echo "Failed: " . $e;
-  }
-
+// SQL Server Extension Sample Code:
+$connectionInfo = array("UID" => "e30nx", "pwd" => "K@nwil0199", "Database" => "dicodingdb", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$serverName = "tcp:herwin.database.windows.net,1433";
+$conn = sqlsrv_connect($serverName, $connectionInfo);
 
     if (isset($_POST['submit'])) {
         try {
