@@ -71,11 +71,11 @@ div {
       
       <label for="fname">Name</label>
       <input type="text" id="name" name="name" placeholder="Your Name..">
-      <label for="email">Email</label>
+      <label for="femail">Email</label>
       <input type="text" name="email" id="email placeholder="Your Email..">
-        <label for="job">Job</label>
+        <label for="fjob">Job</label>
       <input type="text" name="job" id="job" placeholder="Your Job..">
-  <label for="phone">Phone</label>
+  <label for="fphone">Phone</label>
       <input type="text" name="phone" id="phone" placeholder="Your Phone Number..">
       
 
