@@ -40,7 +40,7 @@
  <h2>Tugas Azure View Data</h2>
  
  <form action="/azure/form.php" method="get">
- <a href="/azure/form.php" class="button">Input data</a>
+ <!--<a href="/azure/form.php" class="button">Input data</a>-->
 <button type="submit" class="button" formaction="../azure/form.php">Input data</button>
 <br />
 </form>
@@ -65,8 +65,6 @@ if($stmt === false)
     <th>Job</th>
 	<th>Date</th>
 	<th>Phone</th>
-
-
   </tr>
   <tr>
   <?php
