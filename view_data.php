@@ -46,7 +46,7 @@
 </form>
 <?php 
 / SQL Server Extension Sample Code:
-$connectionInfo = array("UID" => "e30nx@herwin", "pwd" => "K@nwil0199", "Database" => "dicodingdb", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$connectionInfo = array("UID" => "e30nx", "pwd" => "K@nwil0199", "Database" => "dicodingdb", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
 $serverName = "tcp:herwin.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 $query = "SELECT * FROM Registration";
