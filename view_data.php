@@ -64,7 +64,7 @@ if($stmt === false)
     <th>Name</th>
     <th>Email</th>
     <th>Job</th>
-	<th>Date</th>
+<th>Date</th>
 	<th>Phone</th>
   </tr>
   <tr>
