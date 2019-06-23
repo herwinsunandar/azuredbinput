@@ -161,7 +161,7 @@ p, h1, form, button{border:0; margin:0; padding:0;}
 
 
     <button type="submit" name="submit" value="Send" style="margin-top:15px;">Submit</button>
-	<button type="submit" formaction="/azure/view_data.php" name="view_data" value="View Data" style="margin-top:15px;">View Data</button>
+	<button type="submit" formaction="/view_data.php" name="view_data" value="View Data" style="margin-top:15px;">View Data</button>
 <div class="spacer"></div>
 
 
