@@ -18,7 +18,7 @@
 #customers {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  width: 80%;
 }
 #customers td, #customers th {
   border: 1px solid #ddd;
@@ -41,7 +41,7 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 14px;
 }
 </style>
   
