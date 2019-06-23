@@ -59,7 +59,7 @@ catch (PDOException $e) {
             $stmt->bindValue(2, $email);
             $stmt->bindValue(3, $job);
             $stmt->bindValue(4, $date);
-          $stmt->bindValue(4, $phone);
+          $stmt->bindValue(5, $phone);
             $stmt->execute();
         } catch(Exception $e) {
             echo "Failed: " . $e;
@@ -76,14 +76,16 @@ catch (PDOException $e) {
                 echo "<tr><th>Name</th>";
                 echo "<th>Email</th>";
                 echo "<th>Job</th>";
-               echo "<th>Phone</th>";
+            
                 echo "<th>Date</th></tr>";
+                echo "<th>Phone</th>";
                 foreach($registrants as $registrant) {
                     echo "<tr><td>".$registrant['name']."</td>";
                     echo "<td>".$registrant['email']."</td>";
                     echo "<td>".$registrant['job']."</td>";
-                   echo "<td>".$registrant['phone']."</td>";
                     echo "<td>".$registrant['date']."</td></tr>";
+                    echo "<td>".$registrant['phone']."</td>";
+
                 }
                 echo "</table>";
             } else {
