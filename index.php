@@ -14,6 +14,37 @@
  	th { font-size: 1.2em; text-align: left; border: none; padding-left: 0; }
  	td { padding: 0.25em 2em 0.25em 0em; border: 0 none; }
  </style>
+  <style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+#customers tr:hover {background-color: #ddd;}
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+</style>
+  
  </head>
  <body>
  <h1>Register here!</h1>
@@ -72,7 +103,7 @@ catch (PDOException $e) {
             $registrants = $stmt->fetchAll(); 
             if(count($registrants) > 0) {
                 echo "<h2>People who are registered:</h2>";
-                echo "<table>";
+                echo "<table id=customers>";
                 echo "<tr><th>Name</th>";
                 echo "<th>Email</th>";
                 echo "<th>Job</th>";
