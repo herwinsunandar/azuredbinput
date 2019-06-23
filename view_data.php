@@ -39,9 +39,9 @@
 <body>
  <h2>Tugas Azure View Data</h2>
  
- <form action="/azure/form.php" method="get">
+ <form action="/form.php" method="get">
  <!--<a href="/azure/form.php" class="button">Input data</a>-->
-<button type="submit" class="button" formaction="../azure/form.php">Input data</button>
+<button type="submit" class="button" formaction="/form.php">Input data</button>
 <br />
 </form>
 <?php 
