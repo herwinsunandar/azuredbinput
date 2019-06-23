@@ -106,8 +106,7 @@ catch (PDOException $e) {
                 echo "<table id=customers>";
                 echo "<tr><th>Name</th>";
                 echo "<th>Email</th>";
-                echo "<th>Job</th>";
-            
+                echo "<th>Job</th>";            
                 echo "<th>Date</th></tr>";
                 echo "<th>Phone</th>";
                 foreach($registrants as $registrant) {
