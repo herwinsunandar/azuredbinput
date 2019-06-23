@@ -196,7 +196,7 @@ if( $conn === false )
         }
         echo "<h2>Your're registered!</h2>";
  }
-sqlsrv_close($conn);
+//sqlsrv_close($conn);
 ?>
 </form>
 </body>
