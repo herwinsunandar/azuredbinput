@@ -22,6 +22,8 @@
        Name  <input type="text" name="name" id="name"/></br></br>
        Email <input type="text" name="email" id="email"/></br></br>
        Job <input type="text" name="job" id="job"/></br></br>
+       Phone <input type="text" name="phone" id="phone"/></br></br>
+
        <input type="submit" name="submit" value="Submit" />
        <input type="submit" name="load_data" value="Load Data" />
  </form>
@@ -42,7 +44,7 @@
             $email = $_POST['email'];
             $job = $_POST['job'];
             $date = date("Y-m-d");
-            $phone = date("Y-m-d");
+            $phone = $_POST['phone'];
             // Insert data
             $sql_insert = "INSERT INTO Registration (name, email, job, date, phone) 
                         VALUES (?,?,?,?)";
@@ -51,6 +53,7 @@
             $stmt->bindValue(2, $email);
             $stmt->bindValue(3, $job);
             $stmt->bindValue(4, $date);
+          $stmt->bindValue(4, $phone);
             $stmt->execute();
         } catch(Exception $e) {
             echo "Failed: " . $e;
@@ -67,11 +70,13 @@
                 echo "<tr><th>Name</th>";
                 echo "<th>Email</th>";
                 echo "<th>Job</th>";
+               echo "<th>Phone</th>";
                 echo "<th>Date</th></tr>";
                 foreach($registrants as $registrant) {
                     echo "<tr><td>".$registrant['name']."</td>";
                     echo "<td>".$registrant['email']."</td>";
                     echo "<td>".$registrant['job']."</td>";
+                   echo "<td>".$registrant['phone']."</td>";
                     echo "<td>".$registrant['date']."</td></tr>";
                 }
                 echo "</table>";
