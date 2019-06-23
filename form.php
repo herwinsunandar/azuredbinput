@@ -168,7 +168,7 @@ p, h1, form, button{border:0; margin:0; padding:0;}
 
 </div> <!-- end of form class -->
 <?php 
-$serverName = "herwin.database.windows.net";
+$serverName = "tcp:herwin.database.windows.net,1433";
 $options = array(  "UID" => "e30nx",  "PWD" => "K@nwil0199",  "Database" => "dicodingdb");
 $conn = sqlsrv_connect($serverName, $options);
 
