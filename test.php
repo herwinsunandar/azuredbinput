@@ -28,13 +28,13 @@
        <input type="submit" name="load_data" value="Load Data" />
  </form>
  <?php
-   $Driver="ODBC Driver 13 for SQL Server";
+ 
    $host = "herwin.database.windows.net";
    $user = "e30nx";
    $pass = "K@nwil0199";
    $db = "dicodingdb";
    try {
-        $conn = new PDO(" sqlsrv:server = $host; Driver=$Driver, Database = $db", $user, $pass);
+        $conn = new PDO("DRIVER=ODBC Driver 13 for SQL Server; sqlsrv:server = $host; Driver=$Driver, Database = $db", $user, $pass);
         $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 
   } catch(Exception $e) {
