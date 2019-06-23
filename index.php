@@ -3,7 +3,7 @@
  <Title>Registration Form</Title>
  <style type="text/css">
  	input[type=text], select {
-  width: 60%;
+  width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -13,7 +13,7 @@
 }
   
 input[type=submit] {
-  width: 60%;
+  width: 100%;
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
