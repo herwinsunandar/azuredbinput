@@ -3,7 +3,7 @@
  <Title>Registration Form</Title>
  <style type="text/css">
  	input[type=text], select {
-  width: 100%;
+  width: 60%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -13,7 +13,7 @@
 }
   
 input[type=submit] {
-  width: 100%;
+  width: 60%;
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
@@ -68,10 +68,16 @@ div {
  <h1>Register here!</h1>
  <p>Fill in your name and email address, then click <strong>Submit</strong> to register.</p>
  <form method="post" action="index.php" enctype="multipart/form-data" >
-       Name  <input type="text" name="name" id="name"/></br></br>
-       Email <input type="text" name="email" id="email"/></br></br>
-       Job <input type="text" name="job" id="job"/></br></br>
-       Phone <input type="text" name="phone" id="phone"/></br></br>
+      
+      <label for="fname">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your Name..">
+      <label for="email">Email</label>
+      <input type="text" name="email" id="email placeholder="Your Email..">
+        <label for="job">Job</label>
+      <input type="text" name="job" id="job" placeholder="Your Job..">
+  <label for="phone">Phone</label>
+      <input type="text" name="phone" id="phone" placeholder="Your Phone Number..">
+      
 
        <input type="submit" name="submit" value="Submit" />
        <input type="submit" name="load_data" value="Load Data" />
