@@ -53,7 +53,7 @@ catch (PDOException $e) {
             $phone = $_POST['phone'];
             // Insert data
             $sql_insert = "INSERT INTO Registration (name, email, job, date, phone) 
-                        VALUES (?,?,?,?)";
+                        VALUES (?,?,?,?,?)";
             $stmt = $conn->prepare($sql_insert);
             $stmt->bindValue(1, $name);
             $stmt->bindValue(2, $email);
