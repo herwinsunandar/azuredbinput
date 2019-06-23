@@ -10,6 +10,21 @@
  	h1 { font-size: 2em; }
  	h2 { font-size: 1.75em; }
  	h3 { font-size: 1.2em; }
+  
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+  input[type=submit]:hover {
+  background-color: #45a049;
+}
+
  
  </style>
   <style>
