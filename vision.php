@@ -5,7 +5,13 @@
         <script src="jquery.min.js"></script>
     </head>
     <body>
-     
+<style>
+	  
+	  
+	  
+	  
+</style>
+
     <script type="text/javascript">
         function processImage() {
             // **********************************************
@@ -28,10 +34,16 @@
      
             // Request parameters.
             var params = {
-                "visualFeatures": "Categories,Description,Color",
+				 "visualFeatures": "Categories,Description,Color",
+
+                //"visualFeatures": "Description",
                 "details": "",
                 "language": "en",
+         
             };
+            
+            //var obj = {JSON.parse(params)
+			//document.getElementById("demo").innerHTML = obj.Categories + ", " + obj.Description}; 
      
             // Display the image.
             var sourceImageUrl = document.getElementById("inputImage").value;
@@ -56,7 +68,26 @@
      
             .done(function(data) {
                 // Show formatted JSON on webpage.
-                $("#responseTextArea").val(JSON.stringify(data, null, 2));
+               //$("#responseTextArea").val(JSON.stringify(data, null, 2));
+
+                //$("#responseTextArea").val(JSON.stringify(data, ['categories','name', 'score']));
+                $("#responseTextArea").val(JSON.stringify(data, ['description','captions','text']));
+
+
+                
+                var myObj, myJSON, text, obj;
+
+                myJSON = JSON.stringify(data, null, 2);
+				//document.getElementById("demo").innerHTML = myJSON; 
+				
+				localStorage.setItem("testJSON", myJSON);
+				//Retrieving data:
+				text = localStorage.getItem("testJSON");
+				obj = JSON.stringify(data, ['description','captions','text']);
+				document.getElementById("demo2").innerHTML = obj;
+				
+				
+
             })
      
             .fail(function(jqXHR, textStatus, errorThrown) {
@@ -67,15 +98,19 @@
                     jQuery.parseJSON(jqXHR.responseText).message;
                 alert(errorString);
             });
+            
+			
+			
         };
     </script>
+    
      
     <h1>Analyze image:</h1>
     Enter the URL to an image, then click the <strong>Analyze image</strong> button.
     <br><br>
     Image to analyze:
-    <input type="text" name="inputImage" id="inputImage"
-        value="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Bill_Gates_July_2014.jpg/220px-Bill_Gates_July_2014.jpg" />
+    <input type="text"  name="inputImage" id="inputImage"
+        value="http://upload.wikimedia.org/wikipedia/commons/3/3c/Shaki_waterfall.jpg" />
     <button onclick="processImage()">Analyze image</button>
     <br><br>
     <div id="wrapper" style="width:1020px; display:table;">
@@ -83,13 +118,19 @@
             Response:
             <br><br>
             <textarea id="responseTextArea" class="UIInput"
-                      style="width:580px; height:400px;"></textarea>
+                      style="width:580px; height:300px;"></textarea>
         </div>
         <div id="imageDiv" style="width:420px; display:table-cell;">
             Source image:
             <br><br>
             <img id="sourceImage" width="400" />
         </div>
+
     </div>
+
     </body>
+    <p id="demo"></p></br>
+     <p id="demo2"></p>
+  
+
     </html>
